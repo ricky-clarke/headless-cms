@@ -1,0 +1,35 @@
+import styled from 'styled-components'
+
+export const LoadingContainer = styled.div`
+    align-items: center;
+    background-color:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    inset:0;
+    position:fixed;
+    height:100%;
+    width:100%;
+    z-index:9;
+`
+
+
+export const Loader = styled.span`
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #3e2e52;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    } 
+`
+
