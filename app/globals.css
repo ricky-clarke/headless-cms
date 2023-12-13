@@ -38,8 +38,8 @@ body {
   justify-content: space-between;
 }
 
-.logo {
-  font-size:2em;
+.logo span {
+  font-size:1.2em;
 }
 
 a {
