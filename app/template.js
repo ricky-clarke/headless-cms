@@ -17,7 +17,8 @@ export default function Template({ children }) {
                             src="/headless.png" 
                             alt="Logo" 
                             width={70}
-                            height={70}/>
+                            height={70}
+                            priority />
                         </a>
                         <PrimaryMenu />
                     </div>

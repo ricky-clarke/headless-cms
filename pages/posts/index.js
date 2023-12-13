@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Headless CMS - Posts',
 }
 
-export default function News() {
+export default function Posts() {
   return (
         <Template>
           <PostList/>
