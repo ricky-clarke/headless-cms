@@ -23,7 +23,7 @@ export default function Post ( props ) {
                     <div>
                         <Link 
                             className="btn"
-                            href={`/news/${slug}`}>
+                            href={`/posts/${slug}`}>
                             Continue reading
                         </Link>
                     </div>

@@ -9,13 +9,15 @@ export default function PrimaryMenu () {
   const { data: posts } = useSWR("https://headless.granite5.com/wp-json/wp/v2/menu", fetcher, { revalidateOnFocus: true, revalidateOnReconnect: false  }
   );
 
+  console.log(posts)
+
     return (
 
         <>
           <div className='flex gap-8'>
               {posts?.map((post, i) => {
                       return (
-                          <Link key={i} href={post?.slug}>{post?.title}</Link>
+                          <Link key={i} href={"/" + post?.slug}>{post?.title}</Link>
                       )
                   })
               }
