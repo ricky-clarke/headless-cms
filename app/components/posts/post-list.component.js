@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import useSWR from 'swr'
 import Post from "./post-card.component";
 import Loading from '../loading/loading.component';
@@ -7,7 +7,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function PostList () {
 
-    const { data: posts, isLoading, isError: error, } = useSWR("https://headless.granite5.com/wp-json/wp/v2/posts", fetcher, { revalidateOnFocus: false, revalidateOnReconnect: false, revalidateIfStale: false }
+    const { data: posts, isLoading, isError: error, } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS}posts`, fetcher, { revalidateOnFocus: false, revalidateOnReconnect: false, revalidateIfStale: false }
       );
 
       if (error) {

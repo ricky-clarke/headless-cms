@@ -1,0 +1,5 @@
+@import '../../styles/variables';
+
+body:has(.header--bg) header {
+    background-color: $color_secondary;
+  }

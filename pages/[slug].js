@@ -1,53 +1,30 @@
-import Template from "@/app/template";
-// import FormatDate from "@/app/functions/date-format";
-import '../app/globals.css';
-// import '../../app/_src/styles/single-post.css';
+import '../styles/globals.scss'
+import PageHeader from '@/app/components/page_header/page_header.component';
+import ModuleLoop from '@/app/components/module_loop/module_loop.component';
+import Template from '@/app/template';
+import Head from 'next/head';
 
 export async function getServerSideProps(context) {
+  const slug = context.query.slug;
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS}pages?slug=${slug}&acf_format=standard`);
+  const data = await res.json()
+  return { props: { data } }
+}
 
-    const slug = context.query.slug;
+export default  function Page({ data }) {
 
-    const res = await fetch(`https://headless.granite5.com/wp-json/wp/v2/pages?slug=${slug}`);
-  
-    const data = await res.json()
-   
-    return { props: { data } }
-
-  }
-
-export default function SinglePost ( { data } ) {
-
-    const this_test = data[0];
-
-    return (
-        <>
-            <Template>
-            <div className="container">
-                 <h1 dangerouslySetInnerHTML={{ __html: this_test?.title.rendered }}></h1>    
-                 <div className="mt-3 mb-8" dangerouslySetInnerHTML={{ __html: this_test?.content.rendered }}></div>
-
-                 <p><b>{this_test?.acf.copy}</b></p>
-
-                 {this_test?.acf.repeater &&
-
-                    <div>
-
-                    {this_test?.acf.repeater.map((row, i) => {
-                        return (
-                        <div key={i} className="mb-5">
-                            <h3><b>{row.title}</b></h3>
-                            <p>{row.copy}</p>
-                        </div>
-                        )
-                    })}
-                    </div>
-            }
-
-            </div>
-            </Template>
-        </>
-    )
-
+  return (
+    <>
+      <Head>
+          <title>{data[0]?.title.rendered}</title>
+          <meta name="robots" content="noindex,nofollow" />
+      </Head>
+      <Template>
+          <PageHeader data={data[0]?.acf?.page_header} />
+          <ModuleLoop modules={data[0]} />
+      </Template>
+    </>
+  )
 }
 
 

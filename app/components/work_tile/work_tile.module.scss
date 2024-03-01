@@ -1,0 +1,242 @@
+@import '../../styles/variables';
+
+.work_tile {
+    overflow: hidden;
+    position: relative;
+
+    &_img {
+        background-color: $bright_purple;
+        height: 0;
+        position: relative;
+
+        @media(max-width:991.9px) {
+            padding-bottom:75%;
+        }
+        
+         img {
+            height: 100%;
+            object-fit: cover;
+            inset: 0;
+            width:100%;
+            position: absolute;
+         }
+
+         svg {
+            height: auto;
+            inset:20px 20px auto auto;
+            position: absolute;
+            width: 50px;
+            path {
+                fill: #fff;
+            }
+         }
+
+    }
+
+    &_copy {
+        border-left: 3px solid $lime_green;
+        opacity: 1;
+        inset: auto auto 27px 15px;
+        padding: 0em 1em;
+        position: absolute;
+        z-index:9;
+        transition: 500ms all ease;
+
+        @media(min-width:768px) {
+            inset: auto auto 27px 25px;
+        }
+
+        @media(min-width:1024px) {
+            opacity: 0;
+        }
+
+        
+        * {
+            color: #fff;
+        }
+
+        h3 {
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin:0;
+            text-transform:uppercase;
+
+            @media(min-width:450px) and (max-width:649.9px) {
+                font-size:0.9em;
+            }
+
+            @media(min-width:650px) {
+                font-size:1.3em;
+            }
+
+        }
+
+        &:has(p) {
+            h3 {
+                margin-bottom:0.25em;
+            }
+        }
+
+        p {
+            margin:0;
+            line-height:1.4em;
+        }
+
+    }
+
+    &_arrow {
+        opacity: 0;
+        inset:auto 25px 30px auto;
+        position: absolute;
+        z-index:9;
+    }
+
+    &:after {
+
+        background-color: rgba(0,0,0,0.6);
+        background: linear-gradient(0deg, rgba(0,0,0,0.7120098039215687) 21%, rgba(0,0,0,0) 59%);
+        content:"";
+        height: 100%;
+        opacity: 1;
+        inset:auto auto 0 0;
+        position: absolute;
+        width: 100%;
+        transition: 500ms ease background;
+        z-index:1;
+
+        @media(min-width:1024px) {
+            background-color: $bright_purple;
+            background: $bright_purple;
+            opacity: 0;
+            inset: 0;
+            transition: 500ms ease background;
+        }
+
+    }
+
+    &:hover {
+
+        .work_tile_copy,
+        .work_tile_arrow {
+            transition: 500ms all ease;
+            opacity: 1;
+        }
+
+        &:after {
+            opacity: 1;
+            transition: 500ms all ease;
+        }
+    }
+
+    &_0 {
+        @media(min-width:1024px) {
+            grid-column: 1 / 5;
+
+            .work_tile_img {
+                padding-bottom:65%;
+            }
+
+        }
+    }
+
+    &_1 {
+
+        @media(min-width:1024px) {
+            grid-column: 5 / 7;
+
+            .work_tile_img {
+                padding-bottom:135%;
+            }
+
+        }
+    }
+
+    &_2,
+    &_3,
+    &_9,
+    &_10 {
+
+        @media(min-width:1024px) {
+            .work_tile_img {
+                padding-bottom:45%;
+            }
+
+        }
+
+    }
+
+    &_2 {
+        @media(min-width:1024px) {
+            grid-column:  1 / 4;
+            grid-row: 2;
+        }
+    }
+
+    &_3 {
+        @media(min-width:1024px) {
+            grid-column:  1 / 4;
+            grid-row: 3;
+        }
+    }
+
+    &_4,
+    &_7  {
+
+        @media(min-width:1024px) {
+        
+            .work_tile_img {
+                padding-bottom:95%;
+            }
+
+        }
+        
+    }
+
+    &_4 {
+
+        @media(min-width:1024px) {
+            grid-column:  4 / 7;
+            grid-row: 2 / 4;
+        }
+    }
+
+    &_7 {
+
+        @media(min-width:1024px) {
+            grid-column:  1 / 7;
+            grid-row: 4;
+
+            .work_tile_img {
+                padding-bottom:45%;
+            }
+
+        }
+    }
+
+    &_8 {
+
+        @media(min-width:1024px) {
+            grid-column:  1 / 4;
+            grid-row: 5 / 7;
+        }
+    }
+
+    &_9 {
+
+        @media(min-width:1024px) {
+            grid-column:  4 / 7;
+            grid-row: 5;
+
+        }
+    }
+
+    &_10 {
+
+        @media(min-width:1024px) {
+            grid-column:  4 / 7;
+            grid-row: 6;
+
+        }
+    }
+
+}

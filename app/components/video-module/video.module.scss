@@ -1,0 +1,26 @@
+.module__video {
+
+    .video_container {
+        margin: auto;
+        max-width: 1000px;
+    }
+
+    .iframe_wrapper {
+        height: 0;
+        margin-bottom:2em;
+        padding-top: 56.25%;
+        position: relative;
+        text-align: center;
+        width:100%;
+
+        iframe {
+            height:100%;
+            left: 0;
+            position: absolute;
+            top:0;
+            width: 100%;
+        }
+
+    }
+
+}

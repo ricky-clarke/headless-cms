@@ -1,0 +1,26 @@
+.work_title {
+    font-size:clamp(2.25rem,4.25vw,4rem);
+    font-weight: 500;
+    margin-bottom: 0.25em;
+    line-height: 1.2em;
+
+    .serif {
+        font-weight: 100;
+    }
+
+}
+
+.work_tile_grid {
+    grid-template-rows: auto;
+    margin-bottom:4em;
+    grid-template-columns: 1fr;
+    gap:2em;
+
+    @media(min-width:450px) {
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    @media(min-width:1024px) {
+        grid-template-columns: repeat(6,1fr);
+    }
+}

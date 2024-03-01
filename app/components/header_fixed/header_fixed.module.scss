@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.header_fixed {
+    transform: translateY(-100%);
+    transition: 500ms transform ease;
+
+
+    &_active {
+    transform: translateY(0%);
+    transition: 500ms transform ease;
+
+    }
+
+}

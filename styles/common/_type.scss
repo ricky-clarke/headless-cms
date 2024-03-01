@@ -1,0 +1,15 @@
+@import "../common/variables";
+
+body {
+  color: $body_color;
+}
+
+h3 {
+  font-family: var(--font-dm_sans);
+}
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 0.75em;
+  line-height: 1.6em;
+}

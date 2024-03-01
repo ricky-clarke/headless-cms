@@ -1,27 +1,29 @@
-'use client';
+'use client'
 import useSWR from 'swr';
 import Link from 'next/link';
+import styles from './primary_menu.module.scss'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function PrimaryMenu () {
 
-  const { data: posts } = useSWR("https://headless.granite5.com/wp-json/wp/v2/menu", fetcher, { revalidateOnFocus: true, revalidateOnReconnect: false  }
+  const { data: posts } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS}menu`, fetcher, { revalidateOnFocus: true, revalidateOnReconnect: false  }
   );
-
-  console.log(posts)
 
     return (
 
         <>
-          <div className='flex gap-8'>
-              {posts?.map((post, i) => {
+        {/* <div className={styles.primary_menu} dangerouslySetInnerHTML={{__html: posts }}></div> */}
+          <nav className={styles.primary_menu}>
+            <ul>
+               {posts?.map((post, i) => {
                       return (
-                          <Link key={i} href={"/" + post?.slug}>{post?.title}</Link>
+                          <li key={i} ><Link href={"/" + post?.slug}>{post?.title}</Link></li>
                       )
                   })
-              }
-            </div>
+              } 
+              </ul>
+            </nav>
         </>
     )
 }

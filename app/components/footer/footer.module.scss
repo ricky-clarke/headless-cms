@@ -1,0 +1,48 @@
+.footer {
+
+    * {
+        color:#fff;
+    }
+
+    &_top_container {
+        padding-top:5em;
+    }
+
+    &__logo {
+        width: 200px;
+    }
+
+    .footer__graphic {
+        bottom: auto;
+        height: 100%;
+        position: absolute;
+        right:0;
+        top: 0;
+        width: auto;
+        z-index:1;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+
+    &__contact {
+        display: flex;
+        font-size:1em;
+        flex-direction: column;
+        gap:1.5em;
+
+        svg {
+            height: 40px;
+            width:40px;
+        }
+
+        p {
+            font-size:1em;
+        }
+
+    }
+
+}

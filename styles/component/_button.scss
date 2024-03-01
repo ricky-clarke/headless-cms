@@ -1,0 +1,16 @@
+@import '../common/variables';
+
+.btn {
+    padding: 0.75em 1.75em;
+    text-transform: uppercase;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .btn.secondary:hover {
+    background-color: $deep_purple;
+    color: $lime_green;
+    transition: 0.3s all ease-in-out;
+  }
+  

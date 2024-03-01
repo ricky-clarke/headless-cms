@@ -1,0 +1,54 @@
+@import '../../styles/variables';
+
+.module__contact_form {
+    background: linear-gradient(0deg,rgba(140,69,255,.485119) 25%,transparent);
+    min-height: 600px;
+
+    h2 {
+        margin-bottom:0.5em;
+        line-height: 1.3em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .contact_user {
+        align-items: center;
+        color: $color_primary;
+        display: flex;
+        gap: 1em;
+        margin-top: 2em;
+
+        h3 {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+    }
+
+    .contact__graphic {
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        width: 18vw;
+        z-index: 1;
+
+        img {
+            opacity: 0.3;
+            height: auto;
+            transform: translate(-20px,140px);
+            width: 100%;
+        }
+
+    }
+
+}

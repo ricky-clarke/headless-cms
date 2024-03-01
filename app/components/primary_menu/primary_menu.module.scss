@@ -1,0 +1,24 @@
+.primary_menu {
+    color: #fff;
+
+    ul {
+        align-items:center;
+        display: flex;
+
+        li {
+            padding: 0 2em;
+            position: relative;
+
+            a {
+                line-height: 2.5em;
+                font-size: 1.1em;
+                position: relative;
+            }
+
+        }
+
+    }
+
+    
+
+}

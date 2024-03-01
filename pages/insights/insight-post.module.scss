@@ -1,0 +1,15 @@
+.insight_post {
+
+    h1 {
+        font-size: clamp(2.25rem, 4.25vw, 3rem);
+        line-height: 1.1em;
+        margin: 0 0 0.5em;
+    }
+
+    &_back {
+        font-size:0.825em;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+}
