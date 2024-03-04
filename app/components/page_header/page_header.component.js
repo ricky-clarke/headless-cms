@@ -45,7 +45,7 @@ export default function PageHeader( { data, display_type}) {
                 {page_header_video ?
                 <>
                     <div className={styles.page_header__video}>
-                            <iframe src={`${page_header_video}?h=cfc02205f9?autoplay=1&loop=1&title=0&muted=1byline=0&portrait=0&background=1`} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen loading="lazy" title=""></iframe>                    
+                            <iframe src={`${page_header_video}?h=cfc02205f9?autoplay=1&loop=1&title=0&muted=1byline=0&portrait=0&background=1`} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen loading="lazy" title="video title here"></iframe>                    
                     </div><Script src="https://player.vimeo.com/api/player.js"></Script > 
                     <div className={styles.page_header__overlay}></div>
                 </>
