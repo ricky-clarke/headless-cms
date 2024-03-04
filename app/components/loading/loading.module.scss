@@ -1,6 +1,5 @@
-import styled from 'styled-components'
+.loading_container {
 
-export const LoadingContainer = styled.div`
     align-items: center;
     background-color:rgba(0,0,0,0.6);
     display:flex;
@@ -10,10 +9,9 @@ export const LoadingContainer = styled.div`
     height:100%;
     width:100%;
     z-index:9;
-`
+}
 
-
-export const Loader = styled.span`
+.loading_spinner {
     width: 48px;
     height: 48px;
     border: 5px solid #FFF;
@@ -22,14 +20,14 @@ export const Loader = styled.span`
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
+}
 
-    @keyframes rotation {
+@keyframes rotation {
         0% {
             transform: rotate(0deg);
         }
         100% {
             transform: rotate(360deg);
         }
-    } 
-`
+} 
 

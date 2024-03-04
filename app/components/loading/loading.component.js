@@ -1,14 +1,13 @@
 'use client'
-
-import { LoadingContainer, Loader } from "./loading.styles"
+import styles from './loading.module.scss'
 
 export default function Loading () {
 
     return (
         <>
-          <LoadingContainer>
-              <Loader></Loader>
-          </LoadingContainer>
+          <div className={styles.loading_container}>
+              <div className={styles.loading_spinner}></div>
+          </div>
         </>
     )
 }
