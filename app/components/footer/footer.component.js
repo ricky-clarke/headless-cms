@@ -19,7 +19,6 @@ export default function Footer ()  {
                 <div className={`${styles.footer_top_container} container`}>
                     <div className={styles.footer__logo}>
                         <Image
-                            priority
                             src="/logo-white-small.svg" 
                             width={200}
                             height={40}

@@ -1,5 +1,5 @@
 import PageHeader from '@/app/components/page_header/page_header.component';
-import '../styles/globals.scss'
+import './globals.scss';
 import ModuleLoop from '@/app/components/module_loop/module_loop.component';
 
 export const metadata = {

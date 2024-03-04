@@ -1,4 +1,4 @@
-import '../../styles/globals.scss'
+import '../globals.scss';
 import styles from './work_grid.module.scss'
 import WorkCard from '@/app/components/work_tile/work_tile.component';
 

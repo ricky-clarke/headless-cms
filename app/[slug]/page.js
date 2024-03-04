@@ -1,37 +1,32 @@
-'use client'
-import useSWR from 'swr';
-import Head from 'next/head';
 import PageHeader from '@/app/components/page_header/page_header.component';
 import ModuleLoop from '@/app/components/module_loop/module_loop.component';
-import Loading from '../components/loading/loading.component';
-import '../../styles/globals.scss'
+import '../globals.scss';
 
-const fetcher = async (url) => {
-  const res = await fetch(url);
-  return res.json();
-};
+// Dynamic meta data
+export async function generateMetadata({ params }, parent) {
+  const slug = params.slug
+  const meta = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS}pages?slug=${slug}`).then((res) => res.json())
+ 
+  return {
+    title: meta[0].title.rendered,
+    description: ''
+  }
 
-export default function Page( data ) {
+}
 
-  const { data: getData, isLoading, isError: error, } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS}pages?slug=${data.params.slug}&acf_format=standard`, fetcher, { revalidateOnFocus: false, revalidateOnReconnect: false, revalidateIfStale: false }
-  );
+export default async function Page({ params }) {
 
-  if (error) {
-   return <p>Failed to fetch</p>;
- }
+  const getData = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS}pages?slug=${params.slug}&acf_format=standard`);
+    return res.json();
+  }
 
- if (isLoading) {
-   return <Loading />;
- }
+const data = await getData();  
 
-  return (
+ return (
     <>
-      <Head>
-          <title>{getData[0]?.title?.rendered}</title>
-          <meta name="robots" content="noindex,nofollow" />
-      </Head>
-        <PageHeader data={getData[0]?.acf?.page_header} />
-        <ModuleLoop modules={getData[0]} />
+        <PageHeader data={data[0]?.acf?.page_header} />
+        <ModuleLoop modules={data[0]} />
     </>
   )
 }

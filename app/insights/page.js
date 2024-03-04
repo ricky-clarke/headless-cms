@@ -1,5 +1,4 @@
-import Head from 'next/head';
-import '../../styles/globals.scss'
+import '../globals.scss';
 import FeaturedInsight from '@/app/components/featured_insight/featured_insight.component';
 import Card from '@/app/components/card/card.component';
 
@@ -26,10 +25,6 @@ export default  async function Page() {
 
   return (
     <>
-      <Head>
-          <title>Insights</title>
-          <meta name="robots" content="noindex,nofollow" />
-      </Head>
             <FeaturedInsight />
             <div className='container'>
                 <div className='my-[4em]'> 

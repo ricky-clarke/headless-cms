@@ -1,7 +1,6 @@
 import styles from './page_header.module.scss';
 import FiveGraphic from '@/app/assets/svgs/five';
 import Script from 'next/script';
-import Image from 'next/image';
 
 export default function PageHeader( { data, display_type}) {
 
