@@ -26,7 +26,7 @@ export default function VideoModule ( props ) {
                             </div>
                             <div className={styles.iframe_wrapper}><iframe src={`${data}?h=cfc02205f9&autoplay=0&title=0&byline=0&portrait=0`} 
                             allow="fullscreen; picture-in-picture" 
-                            allowFullScreen></iframe></div>
+                            allowFullScreen loading="lazy"></iframe></div>
                             <Script src="https://player.vimeo.com/api/player.js"></Script>
                         </div>
                         } 

@@ -209,12 +209,12 @@
             width: 45vw;
         }
 
-        @include min-md{
+        @include min-md {
             max-width: 400px;
             width:40vw;
         }
 
-        @include min-lg{
+        @include min-lg {
             inset: auto  0 -20% auto;
             width: 30vw;
         }
@@ -223,7 +223,7 @@
             max-width:100%;
         }
 
-        img {
+        svg {
             opacity: 0.2;
             height: 100%;
             transform: translateX(15px);
