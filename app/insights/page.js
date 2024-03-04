@@ -1,18 +1,28 @@
 import Head from 'next/head';
 import '../../styles/globals.scss'
-import Template from '@/app/template';
 import FeaturedInsight from '@/app/components/featured_insight/featured_insight.component';
 import Card from '@/app/components/card/card.component';
 
-export async function getServerSideProps() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS}posts`)
-  const data = await res.json()
-  return { props: { data } }
-}
- 
-export default  function Page({ data }) {
+export const metadata = {
+  title: 'Insights',
+  description: '',
+  keywords: [''],
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
 
-  console.log(data)
+}
+
+const getData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS}posts`);
+  return res.json();
+}
+
+export default  async function Page() {
+
+  const data = await getData();
 
   return (
     <>
@@ -20,7 +30,6 @@ export default  function Page({ data }) {
           <title>Insights</title>
           <meta name="robots" content="noindex,nofollow" />
       </Head>
-      <Template>
             <FeaturedInsight />
             <div className='container'>
                 <div className='my-[4em]'> 
@@ -43,7 +52,6 @@ export default  function Page({ data }) {
                 }
                 </div>
             </div>
-      </Template>
     </>
   )
 }

@@ -5,8 +5,6 @@ export default function WorkCard ( props ) {
 
      const {  title, fimg_url  } = props.data;
 
-     console.log(props.data)
-
     return (
         <>
           <div className={`${styles.work_tile} ${styles[`work_tile_${props.cl}`]}`}>
