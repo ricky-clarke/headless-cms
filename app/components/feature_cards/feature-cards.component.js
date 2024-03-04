@@ -25,7 +25,7 @@ export default function FeatureCards ( props ) {
                                         alt="" />
                                     </div>}
                                     <div className={`${styles.feature_card__copy}`}>
-                                        <h3 className={dm_sans.className}>{row.title}</h3>
+                                        <h2 className={dm_sans.className}>{row.title}</h2>
                                     </div>
                                 </div>
                             )

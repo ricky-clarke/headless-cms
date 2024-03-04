@@ -16,6 +16,7 @@ export default  function Page({ data }) {
     <>
      <Head>
         <title>Web Design Cambridge | Digital Marketing & Website Development | Granite 5</title>
+        <meta name="description" content="Cambridge based Granite 5 is a web design & digital marketing agency. We are proud of our reputation for reliability & for crafting beautiful websites that work." />
         <meta name="robots" content="noindex,nofollow" />
       </Head>
       <Template>

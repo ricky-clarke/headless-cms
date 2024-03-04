@@ -23,7 +23,7 @@ export default function HeaderFixed ()  {
     return (
         <header className={`${styles.header_fixed} hidden lg:block fixed w-full z-50 bg-secondary ${scrolltopdata}`}>
             <div className="container py-4 flex items-center justify-between">
-                <Link href="/">
+                <Link href="/" aria-label="Granite 5">
                     <Image
                         priority
                         src="/logo-5.svg" 
