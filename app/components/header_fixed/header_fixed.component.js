@@ -21,7 +21,7 @@ export default function HeaderFixed ()  {
     }, [])
 
     return (
-        <header className={`${styles.header_fixed} fixed w-full z-50 bg-secondary ${scrolltopdata}`}>
+        <header className={`${styles.header_fixed} hidden lg:block fixed w-full z-50 bg-secondary ${scrolltopdata}`}>
             <div className="container py-4 flex items-center justify-between">
                 <Link href="/">
                     <Image

@@ -1,5 +1,17 @@
 @import '../../styles/variables';
+@import './mixins.module.scss';
 
 body:has(.header--bg) header {
     background-color: $color_secondary;
+  }
+
+  header {
+    img {
+
+      width: 100px;
+
+      @include min-lg {
+        width: 165px;
+      }
+    }
   }

@@ -1,5 +1,13 @@
+@import '../../styles/variables';
+@import './mixins.module.scss';
+
 .primary_menu {
+    display: none;
     color: #fff;
+
+    @include min-lg {
+        display: block;
+    }
 
     ul {
         align-items:center;

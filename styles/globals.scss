@@ -1,7 +1,8 @@
-@import '../styles/layouts/modules';
-@import '../styles/common/variables';
-@import '../styles/common/type';
-@import '../styles/component/button';
+@import './variables';
+@import './mixins.module.scss';
+@import './type.module.scss';
+@import './component/button';
+@import './layouts/modules';
 
 @import "~tailwindcss/base";
 @import "~tailwindcss/components";

@@ -5,7 +5,7 @@ import './header.scss'
 
 export default function Header ()  {
     return (
-        <header className='absolute w-full z-40'>
+        <header className='fixed lg:absolute w-full z-40 bg-secondary lg:bg-transparent'>
             <div className="container py-4 flex items-center justify-between">
                 <Link href="/">
                     <Image

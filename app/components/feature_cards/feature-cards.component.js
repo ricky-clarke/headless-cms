@@ -11,7 +11,7 @@ export default function FeatureCards ( props ) {
     return (
         <>
             <section className={`module__feature_cards module ${spacing}`}>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-6">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-6">
                     {data?.map((row, i) => {
                             return(
                                 <div key={i} className={`relative ${styles.feature_card} ${styles[`feature_card${i}`]}`}>

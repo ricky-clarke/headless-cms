@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import './mixins.module.scss';
 
 .page_header {
     align-items: center;
@@ -31,9 +32,13 @@
     }
 
     p {
-        font-size:1.2em;
+        font-size:1em;
         margin:0;
-        width:80%;
+
+        @include min-lg {
+            font-size:1.2em;
+            width:80%;
+        }
 
         &.page_header__copy__top {
             color: $lime_green;
@@ -204,17 +209,17 @@
             width: 45vw;
         }
 
-        @media(min-width:768px) {
+        @include min-md{
             max-width: 400px;
             width:40vw;
         }
 
-        @media(min-width:1280px) {
+        @include min-lg{
             inset: auto  0 -20% auto;
             width: 30vw;
         }
 
-        @media(min-width:1500px) {
+        @include min-xl {
             max-width:100%;
         }
 
@@ -238,7 +243,14 @@
     }
 
     &.home_page {
-        min-height: 80dvh;
+        min-height: 100vh; 
+        min-height: 100svh; 
+
+        @include min-lg {
+            min-height: 80vh; 
+            min-height: 80svh; 
+        }
+
     }
     
     &.home_page .page_header__graphic {
