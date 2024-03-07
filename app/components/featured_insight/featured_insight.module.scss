@@ -1,6 +1,10 @@
+@import '../../styles/variables';
+@import './mixins.module.scss';
+
 .featured_insight {
     min-height: 80vh;
     min-height: 80dvh;
+    padding-bottom:3em;
     position: relative;
 
     .featured_insight_sub {
@@ -22,9 +26,14 @@
 
     &_copy {
         color:#fff;
-        font-size: 1.2em;
+        font-size: 1em;
         line-height: 1.5em;
         margin: 0;
+
+        @include min-lg {
+            font-size: 1.2em;
+        }
+
     }
 
     &_img {

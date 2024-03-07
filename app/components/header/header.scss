@@ -7,7 +7,8 @@ body:has(.header--bg) header {
 
   header {
     img {
-
+      position: relative;
+      z-index:10;
       width: 100px;
 
       @include min-lg {

@@ -2,6 +2,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import Header from "./components/header/header.component"
 import HeaderFixed from "./components/header_fixed/header_fixed.component"
 import Footer from "./components/footer/footer.component"
+import { GlobalStateProvider } from "./context/context"
 
 export const metadata = {
   title: 'Next.js',
@@ -12,11 +13,13 @@ export default function RootLayout({ children }) {
  return (
     <html lang="en">
       <body>
+        <GlobalStateProvider>
         <HeaderFixed />
         <Header />
         {children}
         <Footer />
         <SpeedInsights />
+        </GlobalStateProvider>
         </body>
     </html>
   )

@@ -25,7 +25,7 @@ export default async function Page() {
 
   return (
     <>
-      <PageHeader data={data[0].acf.page_header} display_type="home_page" />
+      <PageHeader data={data[0].acf.page_header} title={data[0].title.rendered} display_type="home_page" />
       <ModuleLoop modules={data[0]} /> 
   </>
   )

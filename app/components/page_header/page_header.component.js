@@ -2,7 +2,7 @@ import styles from './page_header.module.scss';
 import FiveGraphic from '@/app/assets/svgs/five';
 import Script from 'next/script';
 
-export default function PageHeader( { data, display_type}) {
+export default function PageHeader( { data, title, display_type}) {
 
     const { 
         page_header_title_override,
@@ -26,8 +26,10 @@ export default function PageHeader( { data, display_type}) {
                              <p className={styles.page_header__copy__top} dangerouslySetInnerHTML={{__html: page_header_copy_above }}></p>
                             }
 
-                            {page_header_title_override && 
+                            {page_header_title_override ?
                                 <h1 className='lg:w-9/12' dangerouslySetInnerHTML={{__html: page_header_title_override }}></h1>
+                                 :
+                                <h1 className='lg:w-9/12' dangerouslySetInnerHTML={{__html: title }}></h1>
                             }
 
                             {page_header_copy_below &&
