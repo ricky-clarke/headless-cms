@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import globalContext from "@/app/context/context";
+import styles from './hamburger.module.scss'
 
 export default function Hamburger () {
 
@@ -18,9 +19,8 @@ export default function Hamburger () {
 
     return (
         <>
-            <button className='lg:hidden hamburger absolute z-10  right-0 bg-white py-2 px-5' onClick={menuHandler}>
-                {state.menuOpen == true ? 'OPEN' : 'CLOSED'}
-                
+            <button className={`${styles.hamburger} lg:hidden hamburger absolute z-10 right-0 py-2 px-5`} onClick={menuHandler}>
+                {state.menuOpen == true ? 'X' : 'Menu'}
             </button>
         </>
     )

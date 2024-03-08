@@ -12,7 +12,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 export default function PrimaryMenu () {
 
   const params = useParams();
-  const { state } = useContext(globalContext);
+  const { state, dispatch } = useContext(globalContext);
 
   const { data: posts } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS}menu`, fetcher, { revalidateOnFocus: true, revalidateOnReconnect: false }
   );
@@ -30,7 +30,7 @@ export default function PrimaryMenu () {
                             <li key={i} 
                             className={`${styles.primary_menu_item} ${params.slug == post?.slug ? styles.primary_menu_item__current : ''}`}
                             >
-                              <Link id={`menu_item-${post?.ID}`} href={`${window.location.origin}/${post?.slug}`}>{post?.title}</Link>
+                              <Link id={`menu_item-${post?.ID}`} href={`${window.location.origin}/${post?.slug}`} onClick={() => {  dispatch({type:"MENUOPEN", payload: false }); }}>{post?.title}</Link>
                             </li>
                         )
                     })

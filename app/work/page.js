@@ -26,7 +26,7 @@ export default  async function Page() {
   return (
     <>
         <div className='container header--bg'>
-            <div className='mt-[13em] mb-[8em] w-1/2'>
+            <div className='mt-[8em] lg:mt-[13em] mb-[4em] lg:mb-[8em] lg:w-1/2'>
                 <h1 className={styles.work_title}>Our <span className={`${styles.serif} bright_purple serif`}>work</span></h1>
                 <p>We know that any digital marketing agency is only ever as good as the work and results it produces. Fortunately, Granite 5 has had the privilege of working with some fantastic clients over the years – here is just a small selection of case studies.</p>
             </div>

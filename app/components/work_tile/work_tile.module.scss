@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import './mixins.module.scss';
 
 .work_tile {
     overflow: hidden;
@@ -42,11 +43,11 @@
         z-index:9;
         transition: 500ms all ease;
 
-        @media(min-width:768px) {
+        @include min-md {
             inset: auto auto 27px 25px;
         }
 
-        @media(min-width:1024px) {
+        @include min-lg {
             opacity: 0;
         }
 
@@ -61,11 +62,11 @@
             margin:0;
             text-transform:uppercase;
 
-            @media(min-width:450px) and (max-width:649.9px) {
+            @media(min-width:450px) and (max-width:699.9px) {
                 font-size:0.9em;
             }
 
-            @media(min-width:650px) {
+            @media(min-width:700px) {
                 font-size:1.3em;
             }
 
@@ -92,7 +93,6 @@
     }
 
     &:after {
-
         background-color: rgba(0,0,0,0.6);
         background: linear-gradient(0deg, rgba(0,0,0,0.7120098039215687) 21%, rgba(0,0,0,0) 59%);
         content:"";
@@ -104,7 +104,7 @@
         transition: 500ms ease background;
         z-index:1;
 
-        @media(min-width:1024px) {
+        @include min-lg {
             background-color: $bright_purple;
             background: $bright_purple;
             opacity: 0;
@@ -129,7 +129,7 @@
     }
 
     &_0 {
-        @media(min-width:1024px) {
+        @include min-lg {
             grid-column: 1 / 5;
 
             .work_tile_img {
@@ -141,7 +141,7 @@
 
     &_1 {
 
-        @media(min-width:1024px) {
+        @include min-lg {
             grid-column: 5 / 7;
 
             .work_tile_img {
@@ -156,7 +156,7 @@
     &_9,
     &_10 {
 
-        @media(min-width:1024px) {
+        @include min-lg {
             .work_tile_img {
                 padding-bottom:45%;
             }
@@ -166,14 +166,14 @@
     }
 
     &_2 {
-        @media(min-width:1024px) {
+        @include min-lg {
             grid-column:  1 / 4;
             grid-row: 2;
         }
     }
 
     &_3 {
-        @media(min-width:1024px) {
+        @include min-lg {
             grid-column:  1 / 4;
             grid-row: 3;
         }
@@ -182,19 +182,17 @@
     &_4,
     &_7  {
 
-        @media(min-width:1024px) {
-        
+        @include min-lg {
             .work_tile_img {
                 padding-bottom:95%;
             }
-
         }
         
     }
 
     &_4 {
 
-        @media(min-width:1024px) {
+        @include min-lg {
             grid-column:  4 / 7;
             grid-row: 2 / 4;
         }
@@ -202,7 +200,7 @@
 
     &_7 {
 
-        @media(min-width:1024px) {
+        @include min-lg {
             grid-column:  1 / 7;
             grid-row: 4;
 
@@ -215,7 +213,7 @@
 
     &_8 {
 
-        @media(min-width:1024px) {
+        @include min-lg {
             grid-column:  1 / 4;
             grid-row: 5 / 7;
         }
@@ -223,7 +221,7 @@
 
     &_9 {
 
-        @media(min-width:1024px) {
+        @include min-lg {
             grid-column:  4 / 7;
             grid-row: 5;
 
@@ -232,7 +230,7 @@
 
     &_10 {
 
-        @media(min-width:1024px) {
+        @include min-lg {
             grid-column:  4 / 7;
             grid-row: 6;
 

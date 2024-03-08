@@ -20,6 +20,8 @@ export default function FeaturedInsight () {
     return <Loading />;
   }
 
+  console.log(posts.featured_listing[0])
+
     return (
         
         <>
@@ -28,14 +30,13 @@ export default function FeaturedInsight () {
                 <div className='flex flex-col md:flex-row justify-between md:items-end'>
                     <div className='md:w-3/5'>
                       <p className={`${styles.featured_insight_sub} lime_green`}>FEATURED INSIGHT</p>
-                      <h1>{posts.featured_listing[0].post_name}</h1>
+                      <h1>{posts.featured_listing[0].post_title}</h1>
                       <p className={styles.featured_insight_copy}>{posts.featured_listing[0].post_excerpt}</p>
                     </div>
                     <div className='mt-4 lg:mt-0'><Link className={styles.featured_insight_link} href={`insights/${posts.featured_listing[0].post_name}`}>FIND OUT MORE</Link></div>
                 </div>
             </div>
             <Image className={styles.featured_insight_img} src={posts.featured_listing_img} height={750} width={2000} alt={''} /> 
-
             <div className={styles.featured_insight_overlay}></div>
 
           </section> 

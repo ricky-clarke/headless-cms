@@ -1,3 +1,5 @@
+@import './mixins.module.scss';
+
 .work_title {
     font-size:clamp(2.25rem,4.25vw,4rem);
     font-weight: 500;
@@ -16,11 +18,11 @@
     grid-template-columns: 1fr;
     gap:2em;
 
-    @media(min-width:450px) {
+    @include min-sm {
         grid-template-columns: repeat(2,1fr);
     }
     
-    @media(min-width:1024px) {
+    @include min-lg {
         grid-template-columns: repeat(6,1fr);
     }
 }

@@ -10,7 +10,7 @@
     position: fixed;
     visibility: hidden;
     width: 100%;
-    transition: 2s opacity ease-in-out;
+    transition: 500ms opacity ease-in-out;
 
     @include min-lg {
         background-color: transparent;
@@ -26,7 +26,7 @@
     &__open {
         opacity: 1;
         visibility: visible;
-        transition: 250ms opacity ease-in-out;
+        transition: 500ms opacity ease-in-out;
     }
 
     ul {

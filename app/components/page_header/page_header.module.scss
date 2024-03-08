@@ -255,7 +255,7 @@
     
     &.home_page .page_header__graphic {
     
-        @media(min-width:768px) {
+        @include min-lg{
             inset: auto 0 -43% auto;
             width: 30vw;
         }
