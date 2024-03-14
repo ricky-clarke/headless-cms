@@ -25,7 +25,7 @@ export default function Form (props) {
   const { formID } = props
 
     // Get the form from WP
-    const { data: posts, isLoading, isError: error, } = useSWR(`https://headless.granite5.com/wp-json/gf/v2/forms/1`, 
+    const { data: posts, isLoading, isError: error, } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS_FORM}${formID}`, 
         fetcher, {
              revalidateOnFocus: false, 
              revalidateOnReconnect: true, 
@@ -74,8 +74,6 @@ export default function Form (props) {
     const data = await response.json()
 
     setMessageNotice(data.confirmation_message)
-
-    console.log(data)
 
     }
 

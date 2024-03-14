@@ -20,8 +20,6 @@ export default function FeaturedInsight () {
     return <Loading />;
   }
 
-  console.log(posts.featured_listing[0])
-
     return (
         
         <>
