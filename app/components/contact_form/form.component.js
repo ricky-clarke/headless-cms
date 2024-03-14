@@ -25,7 +25,7 @@ export default function Form (props) {
   const { formID } = props
 
     // Get the form from WP
-    const { data: posts, isLoading, isError: error, } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS_FORM}${formID}`, 
+    const { data: posts, isLoading, isError: error, } = useSWR(`https://headless.granite5.com/wp-json/gf/v2/forms/1`, 
         fetcher, {
              revalidateOnFocus: false, 
              revalidateOnReconnect: true, 
@@ -90,6 +90,7 @@ export default function Form (props) {
                 {posts && posts?.fields?.map((post, i) => {
                     return(
                         <>
+                          <div key={i}>
                                 {(() => {
                                     switch(post.type) {
                                         case "textarea":
@@ -109,6 +110,7 @@ export default function Form (props) {
                                             </div>;
                                     }
                                 })()}
+                                </div>
                         </>
                     )
                 })
