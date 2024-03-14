@@ -89,13 +89,14 @@ export default function Form (props) {
                                               <textarea name={`input_${field.id}`} onChange={formField} /></div>;
                                         default :
                                         return <div className={styles.gravity_form_field}>
-                                              <label>{field.label} {field.isRequired == true && '*'}</label>
-                                              <input 
+                                              <label for={`form-field-${i}`}>{field.label} {field.isRequired == true && '*'}</label>
+                                              <input
+                                              id={`form-field-${i}`}
                                               type={field.type} 
                                               name={`input_${field.id}`}
-                                               onChange={formField}
-                                               required={field.isRequired == true && 'required'}
-                                               placeholder={field.placeholder && field.placeholder }
+                                              onChange={formField}
+                                              equired={field.isRequired == true && 'required'}
+                                              placeholder={field.placeholder && field.placeholder }
                                                />
                                             </div>;
                                     }

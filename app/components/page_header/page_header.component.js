@@ -19,7 +19,7 @@ export default function PageHeader( { data, title, display_type}) {
         <>
             <section className={`${styles.page_header} ${page_header_type} relative ${homePage}`}>
                 <div className="container z-10">
-                    <div className={`${styles.page_header__container}` + ' ld:w-[85%]'}>
+                    <div className={`${styles.page_header__container}` + ' lg:w-[85%]'}>
                         <div>
 
                             {page_header_copy_above &&
