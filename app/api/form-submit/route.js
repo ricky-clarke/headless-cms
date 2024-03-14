@@ -7,8 +7,9 @@ export async function POST(req, res) {
     try {
 
       const body = await req.json();
+      const formID = body.formID;
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_FORM}1/submissions`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_FORM}${formID}/submissions`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -18,15 +19,6 @@ export async function POST(req, res) {
       });
 
       const result = await response.json();
-
-
-       if (response.ok) { 
-          console.log("submission successfull");
-         
-       }
-       else {
-           console.error('Failed to submit the form:', response.statusText);
-       }
 
        return NextResponse.json(result);
 
