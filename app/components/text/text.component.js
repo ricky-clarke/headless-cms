@@ -5,7 +5,7 @@ export default function Text ( props ) {
 
     const { text_column_one, text_column_two, text_number_columns, module_spacing } = props.data;
 
-    const text_grid = text_number_columns == '2' && 'text_grid--2 grid grid-cols-2 gap-[2em]';
+    const text_grid = text_number_columns == '2' && 'text_grid--2 grid lg:grid-cols-2 gap-[2em]';
 
     return (
         <>

@@ -4,6 +4,11 @@
     background: linear-gradient(0deg,rgba(140,69,255,.485119) 25%,transparent);
     min-height: 600px;
 
+    .contact_container {
+        position: relative;
+        z-index:2;
+    }
+
     h2 {
         margin-bottom:0.5em;
         line-height: 1.3em;
@@ -51,4 +56,33 @@
 
     }
 
+}
+
+.gravity_form {
+
+    &_field {
+
+        display: flex;
+        flex-direction: column;
+        margin-bottom:1em;
+
+        label {
+            font-weight: 700;
+            margin-bottom:0.5em;
+        }
+
+        input,
+        textarea {
+            padding:0.5em;
+        }
+    }
+
+ 
+}
+
+.contact_notice {
+    background-color: green;
+    color:#fff;
+    margin-bottom:1em;
+    padding:1em; 
 }

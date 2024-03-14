@@ -36,7 +36,7 @@ export default function FeaturedInsight () {
                     <div className='mt-4 lg:mt-0'><Link className={styles.featured_insight_link} href={`insights/${posts.featured_listing[0].post_name}`}>FIND OUT MORE</Link></div>
                 </div>
             </div>
-            <Image className={styles.featured_insight_img} src={posts.featured_listing_img} height={750} width={2000} alt={''} /> 
+            <Image className={styles.featured_insight_img} src={posts.featured_listing_img} height={750} width={2000} alt={''} priority /> 
             <div className={styles.featured_insight_overlay}></div>
 
           </section> 

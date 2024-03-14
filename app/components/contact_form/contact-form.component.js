@@ -3,22 +3,24 @@ import useSWR from 'swr'
 import styles from './contact-form.module.scss';
 import ModuleTitle from "../module_title/module_title.component";
 import Image from 'next/image';
+import Form from './form.component';
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function ContactForm ( data ) {
 
     const { copy, user, module_title } = data.data
-    const { spacing } = data
+    const { spacing, form_id } = data
 
+    // Get the user
     const { data: userMeta } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS}user_meta/${user?.ID}`, fetcher, { revalidateOnFocus: false, revalidateOnReconnect: false, revalidateIfStale: false }
     );
 
     return (
         <>
             <section className={`${styles.module__contact_form} module ${spacing}`}>
-                <div className="container">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-[15em]">
+                <div className={`${styles.contact_container} container`}>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-[2em] lg:gap-[12em]">
                         <div>
                             <ModuleTitle mod_title={module_title.title} mod_type={module_title.title_type}/>
                             <div dangerouslySetInnerHTML={{__html: copy }}></div>
@@ -40,7 +42,7 @@ export default function ContactForm ( data ) {
                             </div>
                         </div>
                         <div>
-                            FORM
+                        <Form formID={form_id} />
                         </div>
                     </div>
                     </div>

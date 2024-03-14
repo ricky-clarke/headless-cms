@@ -33,7 +33,8 @@ export default function ModuleLoop ( props ) {
                             <Testimonials spacing={row?.module_spacing} /> }
                             
                             {row.acf_fc_layout == 'contact_form' && 
-                            <ContactForm data={row} module_title={row?.module_title} spacing={row?.module_spacing} /> }
+                            <ContactForm data={row} module_title={row?.module_title} spacing={row?.module_spacing} 
+                            form_id={row?.form_id} /> }
 
                             {row.acf_fc_layout == 'team' && 
                             <Team data={row} spacing={row?.module_spacing} /> }

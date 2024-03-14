@@ -24,7 +24,8 @@ export default  async function Page() {
   const data = await getData();
 
   return (
-    <>
+    <> 
+      <div>
             <FeaturedInsight />
             <div className='container'>
                 <div className='my-[4em]'> 
@@ -47,6 +48,7 @@ export default  async function Page() {
                 }
                 </div>
             </div>
+        </div>
     </>
   )
 }
