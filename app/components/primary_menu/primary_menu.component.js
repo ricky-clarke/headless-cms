@@ -14,7 +14,7 @@ export default function PrimaryMenu () {
   const params = useParams();
   const { state, dispatch } = useContext(globalContext);
 
-  const { data: posts } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS}menu`, fetcher, { revalidateOnFocus: true, revalidateOnReconnect: false }
+  const { data: menu_items } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS}menu`, fetcher, { revalidateOnFocus: true, revalidateOnReconnect: false }
   );
 
   const menuStatus = state.menuOpen == true && styles.primary_menu__open;
@@ -23,8 +23,8 @@ export default function PrimaryMenu () {
         <>
           <div className='flex items-center justify-between relative'>
               <Hamburger />
-              <nav className={`${styles.primary_menu} ${menuStatus}`}>
-              <ul>
+              <nav className={`${styles.primary_menu} ${menuStatus}`} dangerouslySetInnerHTML={{__html: menu_items }}></nav>
+              {/* <ul>
                 {posts?.map((post, i) => {
                         return (
                             <li key={i} 
@@ -35,8 +35,8 @@ export default function PrimaryMenu () {
                         )
                     })
                 } 
-                </ul>
-              </nav>
+                </ul> */}
+              {/* </nav> */}
           </div>
         </>
     )

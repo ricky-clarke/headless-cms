@@ -41,7 +41,7 @@
            height: auto;
         }
 
-        li.primary_menu_item {
+        li {
             margin-block: 0.5em;
             padding: 0 2em;
             position: relative;
@@ -73,12 +73,13 @@
 
             }
 
-            &:hover > a:after,
-            &__current > a:after {
+            &:hover > a:after {
                 background-color: $lime_green;
                 transition: 500ms width ease;
                 width: 100%;
             }
+
+            &:has(ul) {
 
             ul {
                 background-color: $deep_purple;
@@ -100,6 +101,8 @@
                 > ul {
                     display: block;
                 }
+            }
+
             }
 
         }
