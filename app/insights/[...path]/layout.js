@@ -14,9 +14,7 @@ export default function Layout({ children }) {
  return (
     <>
       { children }
-      <p>HERE</p>
-      <h1>WORK PAGE</h1>
-
+      <h1>INISIGHT LAYOUT</h1>
     </>
   )
 }

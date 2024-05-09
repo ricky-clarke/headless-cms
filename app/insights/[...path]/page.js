@@ -3,16 +3,16 @@ import Link from "next/link";
 import '../../globals.scss';
 
 // Dynamic meta data
-export async function generateMetadata({ params }, parent) {
-    const slug = params.slug
-    const meta = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}posts?slug=${slug}`).then((res) => res.json())
+// export async function generateMetadata({ params }, parent) {
+//     const slug = params.slug
+//     const meta = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}posts?slug=${slug}`).then((res) => res.json())
    
-    return {
-      title: meta[0].title.rendered,
-      description: ''
-    }
+//     return {
+//       title: meta[0].title.rendered,
+//       description: ''
+//     }
   
-  }
+//   }
  
 export default async function SinglePost () {
 

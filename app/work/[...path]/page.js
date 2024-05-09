@@ -25,7 +25,7 @@ export default  async function Page() {
 
   return (
     <>
-        <div className='container header--bg'>
+        <div className='container header--bg mt-[8em]'>
            <h1>WORK POST</h1>
         </div>
     </>
