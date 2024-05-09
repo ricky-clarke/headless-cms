@@ -1,31 +1,32 @@
 import '../globals.scss';
-import styles from './work_grid.module.scss'
-import WorkCard from '@/app/components/work_tile/work_tile.component';
+// import styles from './work_grid.module.scss'
+// import WorkCard from '@/app/components/work_tile/work_tile.component';
 
-export const metadata = {
-  title: 'Work',
-  description: '',
-  keywords: [''],
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-  },
+// export const metadata = {
+//   title: 'Work',
+//   description: '',
+//   keywords: [''],
+//   robots: {
+//     index: false,
+//     follow: false,
+//     nocache: true,
+//   },
 
-}
+// }
 
-const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}work`);
-  return res.json();
-}
+// const getData = async () => {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}work`);
+//   return res.json();
+// }
 
 export default  async function Page() {
 
-  const data = await getData();
+  // const data = await getData();
 
   return (
     <>
-        <div className='container header--bg'>
+      <h1>WORK PAGE</h1>
+        {/* <div className='container header--bg'>
             <div className='mt-[8em] lg:mt-[13em] mb-[4em] lg:mb-[8em] lg:w-1/2'>
                 <h1 className={styles.work_title}>Our <span className={`${styles.serif} bright_purple serif`}>work</span></h1>
                 <p>We know that any digital marketing agency is only ever as good as the work and results it produces. Fortunately, Granite 5 has had the privilege of working with some fantastic clients over the years – here is just a small selection of case studies.</p>
@@ -40,7 +41,7 @@ export default  async function Page() {
             })
             }
             </div>
-        </div>
+        </div> */}
     </>
   )
 }

@@ -1,32 +1,33 @@
 import '../globals.scss';
-import FeaturedInsight from '@/app/components/featured_insight/featured_insight.component';
-import Card from '@/app/components/card/card.component';
+// import FeaturedInsight from '@/app/components/featured_insight/featured_insight.component';
+// import Card from '@/app/components/card/card.component';
 
-export const metadata = {
-  title: 'Insights',
-  description: '',
-  keywords: [''],
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-  },
+// export const metadata = {
+//   title: 'Insights',
+//   description: '',
+//   keywords: [''],
+//   robots: {
+//     index: false,
+//     follow: false,
+//     nocache: true,
+//   },
 
-}
+// }
 
-const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}posts`);
-  return res.json();
-}
+// const getData = async () => {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}posts`);
+//   return res.json();
+// }
 
 export default  async function Page() {
 
-  const data = await getData();
+  // const data = await getData();
 
   return (
     <> 
       <div>
-            <FeaturedInsight />
+          <h1>Insights</h1>
+            {/* <FeaturedInsight />
             <div className='container'>
                 <div className='my-[4em]'> 
                     <p className='m-0'>SHOWING {data.length} of {data.length} RESULTS</p>
@@ -47,7 +48,7 @@ export default  async function Page() {
                 })
                 }
                 </div>
-            </div>
+            </div> */}
         </div>
     </>
   )
