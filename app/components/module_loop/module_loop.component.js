@@ -147,6 +147,16 @@ export default async function ModuleLoop ( props ) {
                             textColumnOne
                             textColumnTwo
                             textNumberColumns
+                            link {
+                              target
+                              title
+                              url
+                            }
+                            linkTwo {
+                              target
+                              title
+                              url
+                            }
                           }
                           ... on ModulesModulesTeamLayout {
                             fieldGroupName

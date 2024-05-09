@@ -11,7 +11,7 @@ export default function LargeImage ( data ) {
     return (
         <>
          <section className={`${styles.module__large_image} ${moduleSpacing} module`}>
-            {/* <div className={`${imageContainerWidth == 'contain' ? 'container' : ''}
+            <div className={`${imageContainerWidth == 'contain' ? 'container' : ''}
              ${image_count == 2 ? 'md:grid-cols-2 gap-[2em]' : styles.grid_full } grid`}>
                     {image?.map((row, i) => {
                         return(
@@ -28,7 +28,7 @@ export default function LargeImage ( data ) {
                          )
                         })
                     }
-            </div> */}
+            </div>
         </section>
         </>
     )
