@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+@import '../../../styles/common/mixins';
+
+
+.module__large_image {
+
+   .grid_full {
+
+      .module__large_image_wrap {
+         padding-bottom: 65%;
+         position: relative;
+   
+         @include min-lg {
+            padding-bottom: 700px;
+         }
+
+         img {
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            position: absolute;
+            width: 100%;
+         }
+
+      }
+
+   }
+
+
+}

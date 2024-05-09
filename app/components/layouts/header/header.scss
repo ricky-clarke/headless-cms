@@ -1,0 +1,19 @@
+@import '../../../styles/variables';
+@import '../../../styles/common/mixins';
+
+body:has(.header--bg) header {
+    background-color: $color_secondary;
+  }
+
+  
+  header {
+    img {
+      position: relative;
+      z-index:10;
+      width: 100px;
+
+      @include min-lg {
+        width: 165px;
+      }
+    }
+  }

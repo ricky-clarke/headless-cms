@@ -1,22 +1,46 @@
-// $primaryFont: var(--poppins-default);
-// $headingFont: var(--roboto-default);
+@import '../variables';
+@import '../common/mixins';
 
 body {
   color: $primary;
+  font-family: var(--font-dm_sans);
 }
 
 h1 {
     font-size: clamp(2.25rem,4.25vw,4rem);
-    letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 1.75em;
+  font-weight: 600;
+
+  @include min-md {
+    font-size: 2em;
+  }
+
 }
 
 h3 {
-    font-family: sans serif;
+    font-size: 1.1em;
+    font-weight: 500;
     line-height: 1em;
-    font-size: clamp(1.5rem, 5vw, 2em);
     margin: 0 0 0.25em 0;
+    letter-spacing: 1px;
+
+    @include min-md {
+      font-size: 1.3em;
+    }
+
   }
   
-  p {
-    margin-bottom:1em;
+p {
+  font-size: 1.1em;
+  margin-bottom: 0.75em;
+  line-height: 1.6em;
+}
+
+main {
+  ul, ol {
+    font-size: 1.1em;
   }
+}

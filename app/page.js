@@ -1,6 +1,6 @@
-import PageHeader from '@/app/components/page_header/page_header.component';
-import './globals.scss';
+import PageHeader from '@/app/components/layouts/page_header/page_header.component';
 import ModuleLoop from '@/app/components/module_loop/module_loop.component';
+import './globals.scss';
 
 export const metadata = {
   title: 'Web Design Cambridge | Digital Marketing & Website Development | Granite 5',
@@ -14,19 +14,46 @@ export const metadata = {
 
 }
 
-const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS}pages?slug=home&acf_format=standard`);
-  return res.json();
-}
- 
-export default async function Page() {
+export default async function Page({ params }) {
 
-  const data = await getData();
+  const getData = async () => {
+  
+    const query = `query getFrontPage {
+      pageBy(uri: "/") {
+        title
+        pageId
+        pageHeader {
+          pageHeader {
+            pageHeader
+          }
+        }
+      }
+    }`
+  
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_GRAPHQL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      next: { revalidate: 60 },
+      body: JSON.stringify({
+        query,
+      }),
+    })
+    return res.json();
+  
+  }
+  
+  const getPage = await getData();
+  const getDataPath = getPage.data.pageBy;
+  const page_id = getDataPath.pageId;
+  const get_pageTitle = getDataPath.title;
+  const page_header_enable = getDataPath.pageHeader?.pageHeader.pageHeader;
 
   return (
     <>
-      <PageHeader data={data[0].acf.page_header} title={data[0].title.rendered} display_type="home_page" />
-      <ModuleLoop modules={data[0]} /> 
-  </>
+      {page_header_enable && <PageHeader page_id={page_id} title={get_pageTitle} /> }
+        <ModuleLoop page_id={page_id} />
+    </>
   )
 }

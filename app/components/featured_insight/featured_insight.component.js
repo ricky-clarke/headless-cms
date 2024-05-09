@@ -3,13 +3,13 @@ import useSWR from 'swr'
 import styles from './featured_insight.module.scss'
 import Link from 'next/link';
 import Image from 'next/image';
-import Loading from '../loading/loading.component';
+import Loading from '../ui/loading/loading.component';
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function FeaturedInsight () {
 
-   const { data: posts, isLoading, isError: error, } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS}acf-options`, fetcher, { revalidateOnFocus: false, revalidateOnReconnect: false, revalidateIfStale: false }
+   const { data: posts, isLoading, isError: error, } = useSWR(`${process.env.NEXT_PUBLIC_HEADLESS_API}acf-options`, fetcher, { revalidateOnFocus: false, revalidateOnReconnect: false, revalidateIfStale: false }
    );
 
    if (error) {

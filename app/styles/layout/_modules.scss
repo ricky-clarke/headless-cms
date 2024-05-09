@@ -1,0 +1,61 @@
+@import '../variables';
+@import '../common/mixins';
+
+.module {
+    float:left;
+    margin-bottom:4rem;
+    margin-top: 4rem;
+    position: relative;
+    width: 100%;
+
+  &[class*="bg-"]:not(.bg-white) {
+      padding-block: 2em;
+
+      @include min-lg {
+        padding-block: 3.5em;
+
+      }
+
+  }
+
+  &.bg- {
+
+    &cream {
+      background-color: $cream;
+    }
+
+    &top_half {
+
+      &:before {
+        background-image: linear-gradient(to top, white 50%, transparent 50%);
+        bottom:0;
+        height: 55%;
+        content:"";
+        position: absolute;
+        width: 100%;
+      }
+
+    }
+
+    &bottom_half {
+
+      &:after {
+        background-image: linear-gradient(to top, transparent 35%, white 30%);
+        height: 55%;
+        content:"";
+        position: absolute;
+        top:0;
+        width: 100%;
+        z-index:1;
+      }
+
+    }
+
+  }
+
+  .container {
+    position: relative;
+    z-index:2;
+  }
+
+  }

@@ -17,7 +17,7 @@ module.exports = {
       colors: {
         primary: '#24143D',
         secondary: '#3B2E4F',
-        cream : '#FAF5ED'
+        cream : '#FAF5ED',
       },
       container: {
         padding: '1rem',

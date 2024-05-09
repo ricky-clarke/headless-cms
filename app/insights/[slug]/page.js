@@ -4,7 +4,7 @@ import '../../globals.scss';
 // Dynamic meta data
 export async function generateMetadata({ params }, parent) {
     const slug = params.slug
-    const meta = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS}posts?slug=${slug}`).then((res) => res.json())
+    const meta = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}posts?slug=${slug}`).then((res) => res.json())
    
     return {
       title: meta[0].title.rendered,
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }, parent) {
 export default async function SinglePost ( { params} ) {
 
     const getPostData = async () => {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS}posts?slug=${params.slug}&acf_format=standard`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}posts?slug=${params.slug}&acf_format=standard`);
         return res.json();
       }
     

@@ -1,4 +1,4 @@
-@import './mixins.module.scss';
+@import '../styles/common/mixins';
 
 .work_title {
     font-size:clamp(2.25rem,4.25vw,4rem);

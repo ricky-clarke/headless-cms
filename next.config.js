@@ -11,7 +11,13 @@ const nextConfig = {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'headless.granite5.com',
+            hostname: 'backend.granite5.com',
+            port: '',
+          //  pathname: '/account123/**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'ricky-react-app-headless.vercel.app',
             port: '',
           //  pathname: '/account123/**',
           },

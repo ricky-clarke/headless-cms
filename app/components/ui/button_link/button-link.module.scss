@@ -1,0 +1,34 @@
+@import '../../../styles/variables';
+
+.btn {
+    border:1px solid #fff;
+    display:inline-block;
+    padding:0.75em 1.75em;
+    text-transform: uppercase;
+    transition: 0.3s all ease;
+}
+
+.btn--white {
+    border:1px solid $bright_purple;
+    color:$bright_purple;
+
+    &:hover {
+        background-color: $bright_purple;
+        color:#fff;
+        transition: 0.3s all ease;
+    }
+
+}
+
+.btn--secondary {
+    border:1px solid $lime_green;
+    background-color: $dark_purple;
+    color:#fff;
+
+    &:hover {
+        background-color: $deep_purple;
+        transition: 0.3s all ease;
+    }
+
+
+}

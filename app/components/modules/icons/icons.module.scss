@@ -1,0 +1,62 @@
+@import '../../../styles/variables';
+@import '../../../styles/common/mixins';
+
+.module__icons {
+
+    .icon_tile {
+        align-items: center;
+        gap:1em;
+        position: relative;
+
+        @include min-lg {
+            grid-template-columns: 75px 1fr;
+            gap:3em;
+        }
+
+        img {
+            width:50px;
+
+            @include min-lg {
+               width: auto;
+            }
+
+        }
+
+        &:has(p) {
+            align-items: flex-start;
+        }
+
+        &__small {
+
+            img {
+                margin-bottom: 0.5em;
+                width: 80px;
+            }
+
+            h3 {
+                font-size: 1.3em;
+                font-weight: bold;
+            }
+
+        }
+
+    }
+
+    h3 {
+        font-size: 1.2em;
+        line-height: 1.4em;
+
+        @include min-lg {
+            font-size: 1.5em;
+        }
+
+    }
+
+    a {
+        height: 100%;
+        inset:0;
+        position: absolute;
+        width: 100%;
+    }
+
+}

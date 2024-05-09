@@ -15,7 +15,7 @@ export const metadata = {
 }
 
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS}work`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}work`);
   return res.json();
 }
 
