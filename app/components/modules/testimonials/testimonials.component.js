@@ -30,17 +30,19 @@ export default function Testimonials ( { data } ) {
             <section className={`${styles.module__testimonials} ${spacingModuleSpacing} module`}>
                 <div className="container">
                     <div className={`${styles.testimonial_container} bg-secondary`}>
-                    {testimonial && testimonial?.map(post => (
-                            <div key={post.id} className="testimonial__container position-relative">
-                                <div className={styles.testimonial}>
-                                    <div className={styles.testimonial__graphic}><QuoteGraphic /></div>
-                                    <div className={styles.testimonial__wrap}>
-                                        <div className={styles.testimonial__copy}><p>{post?.acf?.testimonial}</p></div>
-                                        <p className={styles.testimonial__author}>{post?.title?.rendered} </p>
+                        {testimonial && testimonial?.map((post, i) => {
+                                    return(
+                                        <div key={i} className="testimonial__container position-relative">
+                                        <div className={styles.testimonial}>
+                                            <div className={styles.testimonial__graphic}><QuoteGraphic /></div>
+                                            <div className={styles.testimonial__wrap}>
+                                                <div className={styles.testimonial__copy}><p>{post?.acf?.testimonial}</p></div>
+                                                <p className={styles.testimonial__author}>{post?.title?.rendered} </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                    ))}
+                                    ) })
+                            }
                     </div>
                 </div>
             </section>

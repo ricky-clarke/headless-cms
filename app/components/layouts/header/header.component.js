@@ -1,5 +1,6 @@
 import Logo from '../../ui/logo/logo.component';
 import PrimaryMenu from '../../ui/primary_menu/primary_menu.component';
+import Link from 'next/link';
 import './header.scss'
 
 export default function Header ()  {
@@ -11,7 +12,9 @@ export default function Header ()  {
                 {/* <Link href="/" aria-label="Granite 5" onClick={() => {  dispatch({type:"MENUOPEN", payload: false }); }}>
                     <Logo />
                 </Link> */}
-                 <Logo />
+                <Link href="/" aria-label="Granite 5">
+                    <Logo />
+                </Link>
                 <PrimaryMenu />
             </div>
         </header>

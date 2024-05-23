@@ -1,4 +1,4 @@
-import Icons from '@/app/components/modules/icons/icons.component';
+import Icons from '@/app/components/modules/icons/icons.component.js';
 import FeatureCards from '@/app/components/modules/feature_cards/feature-cards.component';
 import VideoModule from '@/app/components/modules/video-module/video-module.component';
 import Testimonials from '@/app/components/modules/testimonials/testimonials.component';
@@ -8,6 +8,7 @@ import Team from '../modules/team/team.component';
 import ImageCards from '../modules/image_cards/image-cards.component';
 import Work from '../modules/work/work.component';
 import LargeImage from '../modules/large_image/large_image.component';
+import TextMedia from '../modules/text_media/text_media.component';
 
 export default async function ModuleLoop ( props ) {
 
@@ -227,6 +228,31 @@ export default async function ModuleLoop ( props ) {
                               url
                             }
                           }
+                          ... on ModulesModulesTextMediaLayout {
+                            fieldGroupName
+                            moduleSpacing
+                            moduleTitle {
+                              title
+                              titleType
+                            }
+                            moduleTextMediaCopy
+                            moduleTextMediaDeskPos
+                            moduleTextMediaDots
+                            moduleTextMediaLink {
+                              title
+                              url
+                              target
+                            }
+                            moduleTextMediaImage {
+                              node {
+                                sourceUrl
+                                altText
+                              }
+                            }
+                            moduleTextMediaMobPos
+                            moduleTextMediaType
+                            
+                          }
                         }
                       }
                     }
@@ -262,6 +288,8 @@ export default async function ModuleLoop ( props ) {
                       <div key={i}>
                             
                             {row.fieldGroupName == 'ModulesModulesTextLayout' && <Text data={row} /> }
+
+                            {row.fieldGroupName == 'ModulesModulesTextMediaLayout' && <TextMedia data={row} /> }
 
                             {row.fieldGroupName == 'ModulesModulesContactFormLayout' && <ContactForm data={row} />}
 

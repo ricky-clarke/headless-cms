@@ -1,5 +1,6 @@
 import styles from './work_tile.module.scss'
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function WorkCard ( props ) {
 
@@ -25,7 +26,8 @@ export default function WorkCard ( props ) {
               width={20} />
             </div>
             <div className="work_tile__overlay d-lg-none"></div>
-            <a className="overlay" href="#" aria-label="Read more"></a>
+            <Link href="" className="overlay" aria-label="View case study"></Link>
+            {/* <a className="overlay" href="#" aria-label="Read more"></a> */}
           </div>
         </>
     )

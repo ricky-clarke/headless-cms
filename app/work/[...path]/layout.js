@@ -1,4 +1,3 @@
-// import { SpeedInsights } from "@vercel/speed-insights/next"
 // import Header from "./components/layouts/header/header.component"
 // import HeaderFixed from "./components/layouts/header_fixed/header_fixed.component"
 // import Footer from "./components/layouts/footer/footer.component"

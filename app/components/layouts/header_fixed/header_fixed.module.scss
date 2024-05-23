@@ -1,4 +1,8 @@
+@import '../../../styles/variables';
+@import '../../../styles/common/mixins';
+
 .header_fixed {
+
     transform: translateY(-100%);
     transition: 500ms transform ease;
 
@@ -11,6 +15,115 @@
     &_active {
         transform: translateY(0%);
         transition: 500ms transform ease;
+    }
+
+}
+
+.fixed_menu {
+
+    color:#fff;
+  
+    ul {
+        align-items:center;
+        justify-content: center;
+        display: flex;
+
+        li {
+
+            padding: 0 2em;
+            position: relative;
+            margin-block:0;
+
+                &:focus-within {
+                    > ul {
+                       display: block;
+                   }
+               }   
+
+        
+            > a {
+                font-size: 1.1em;
+                line-height: 2.5em;
+                position: relative;
+
+                &:after {
+                    background-color: white;
+                    content:"";
+                    height: 2px;
+                    margin:auto;
+                    inset:auto 0 -12px 0;
+                    position: absolute;
+                    width: 0.01px;
+                    transition: 500ms width ease;
+                }
+
+            }
+
+            &:hover > a:after {
+                background-color: $lime_green;
+                transition: 500ms width ease;
+                width: 100%;
+            }
+
+        
+            &:has(ul) {
+
+                ul.fixed_menu__sub {
+                    background-color: $deep_purple;
+                    border-top:2px solid $lime_green;
+                    display: none;
+                    position: absolute;
+                    left: -50%;
+                    margin: auto;
+                    right: -50%;
+                    width:240px;
+
+                    li {
+                        padding:0;
+                    }
+
+                    a {
+                        background-color: $deep_purple;
+                        display: block;
+                        line-height: normal;
+                        padding: 0.75em;
+                        font-size: 1em;
+
+                        &:after {
+                            display: none;
+                        }
+
+                        &:hover {
+                            background-color: darken($deep_purple, 8);
+                        }
+
+                    }
+                }
+            
+                ul.fixed_menu__second{
+                    top:42px;
+                }
+            
+                ul.fixed_menu__third {
+                    border-top:0;
+                    left:240px;
+                    top:0;
+                }
+
+            &:hover {
+                > ul {
+                    display: block;
+                }
+            }
+
+            }
+
+        }
+
+        > li:last-child {
+            padding-right:0;
+        }
+
     }
 
 }

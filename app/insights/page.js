@@ -1,6 +1,6 @@
 import '../globals.scss';
-// import FeaturedInsight from '@/app/components/featured_insight/featured_insight.component';
-// import Card from '@/app/components/card/card.component';
+import FeaturedInsight from '@/app/components/featured_insight/featured_insight.component';
+import Card from '@/app/components/card/card.component';
 
 // export const metadata = {
 //   title: 'Insights',
@@ -26,14 +26,13 @@ export default  async function Page() {
   return (
     <> 
       <div>
-          <h1>Insights</h1>
-            {/* <FeaturedInsight />
+            {/* <FeaturedInsight /> */}
             <div className='container'>
                 <div className='my-[4em]'> 
-                    <p className='m-0'>SHOWING {data.length} of {data.length} RESULTS</p>
+                    {/* <p className='m-0'>SHOWING {data.length} of {data.length} RESULTS</p> */}
                 </div>
                 <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-[2em] mb-10'>
-                {data && data?.map((post, i) => {
+                {/* {data && data?.map((post, i) => {
                     return(
                         <>
                             <Card key={i} 
@@ -46,9 +45,9 @@ export default  async function Page() {
                         </>
                     )
                 })
-                }
+                } */}
                 </div>
-            </div> */}
+            </div>
         </div>
     </>
   )

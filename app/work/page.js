@@ -1,6 +1,6 @@
 import '../globals.scss';
 import styles from './work_grid.module.scss'
-import WorkCard from '@/app/components/work_tile/work_tile.component';
+// import WorkCard from '@/app/components/work_tile/work_tile.component';
 
 // export const metadata = {
 //   title: 'Work',
@@ -14,14 +14,14 @@ import WorkCard from '@/app/components/work_tile/work_tile.component';
 
 // }
 
-const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}work`);
-  return res.json();
-}
+// const getData = async () => {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_HEADLESS_API}work`);
+//   return res.json();
+// }
 
 export default  async function Page() {
 
-   const data = await getData();
+   // const data = await getData();
 
   return (
     <>
@@ -31,14 +31,14 @@ export default  async function Page() {
                 <p>We know that any digital marketing agency is only ever as good as the work and results it produces. Fortunately, Granite 5 has had the privilege of working with some fantastic clients over the years – here is just a small selection of case studies.</p>
             </div>
             <div className={`${styles.work_tile_grid} grid mb-10`}>
-            {data && data?.map((post, i) => {
+            {/* {data && data?.map((post, i) => {
                 return(
                     <>
                         <WorkCard key={i} data={post} cl={i} />
                     </>
                 )
             })
-            }
+            } */}
             </div>
         </div>
     </>
